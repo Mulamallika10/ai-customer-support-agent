@@ -5,13 +5,26 @@ export async function GET() {
   try {
     const { data, error } = await supabase
       .from("conversations")
-      .select("*")
+      .select(
+        "id, customer_id, title, status, created_at"
+      )
       .order("created_at", {
         ascending: false,
       });
 
     if (error) {
-      throw new Error(error.message);
+      console.error(
+        "Supabase conversations error:",
+        error
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          error: error.message,
+        },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({

@@ -197,7 +197,7 @@ export default function ChatWindow({
           id: "welcome",
           role: "assistant",
           content:
-            "Hello! 👋 How can I help you with GarudaVPN today?",
+            "Hello! 👋 How can I help you with Ai customer support today?",
         },
       ]);
 
