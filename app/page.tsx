@@ -1,69 +1,200 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-slate-50">
+      <div className="mx-auto min-h-screen max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <header className="border-b border-slate-200 pb-6">
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                Customer Support
+              </h1>
+
+              <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500">
+                Get quick assistance with your orders, refunds, returns, and
+                customer policies.
+              </p>
+            </div>
+
+            {/* Login Button */}
+            <Link
+              href="/login"
+              className="shrink-0 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Login
+            </Link>
+          </div>
+        </header>
+
+        {/* Support Topics */}
+        <section className="py-8">
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold text-slate-900">
+              How can we help?
+            </h2>
+
+            <p className="mt-1 text-sm text-slate-500">
+              Choose a topic or ask our AI customer support assistant.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+            {/* Customer Orders */}
+            <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 2h9l3 3v17H6z" />
+                  <path d="M14 2v4h4" />
+                  <path d="M9 10h6" />
+                  <path d="M9 14h6" />
+                  <path d="M9 18h4" />
+                </svg>
+              </div>
+
+              <h3 className="mt-5 text-base font-semibold text-slate-900">
+                Customer Orders
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-500">
+                Get help with your orders, order status, cancellations, and
+                delivery information.
+              </p>
+            </div>
+
+            {/* Refunds */}
+            <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 12a9 9 0 1 0 3-6.7" />
+                  <path d="M3 4v5h5" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+
+              <h3 className="mt-5 text-base font-semibold text-slate-900">
+                Refunds
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-500">
+                Check refund eligibility, refund status, and get assistance
+                with refund requests.
+              </p>
+            </div>
+
+            {/* Customer Policies */}
+            <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md sm:col-span-2 lg:col-span-1">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 3 5 6v5c0 4.5 2.9 8.3 7 10 4.1-1.7 7-5.5 7-10V6z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+
+              <h3 className="mt-5 text-base font-semibold text-slate-900">
+                Customer Policies
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-500">
+                Learn about return, cancellation, refund, and other customer
+                support policies.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* AI Customer Support */}
+        <section className="pb-8">
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+
+            {/* Chat Header */}
+            <div className="border-b border-slate-200 px-5 py-4 sm:px-6">
+              <div className="flex items-center gap-3">
+
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+                    <path d="M8 10h8" />
+                    <path d="M8 14h5" />
+                  </svg>
+                </div>
+
+                <div>
+                  <h2 className="text-base font-semibold text-slate-900">
+                    AI Customer Support
+                  </h2>
+
+                  <div className="mt-0.5 flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
+
+                    <span className="text-xs text-slate-500">
+                      Online and ready to help
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Chat Window */}
+            {/* 
+            <div className="h-[650px]">
+              <ChatWindow />
+            </div>
+            */}
+
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-200 py-5 text-center">
+          <p className="text-xs text-slate-400">
+            AI Customer Support • Orders • Refunds • Policies
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </footer>
+
+      </div>
+    </main>
   );
 }
