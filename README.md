@@ -1015,7 +1015,3 @@ Refund Result**
 without creating a separate mapping system.
 
 ------------------------------------------------------------------------
-
-## License
-
-Add the project's applicable license here.
