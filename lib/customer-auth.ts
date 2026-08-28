@@ -6,6 +6,7 @@ export async function getAuthenticatedCustomer() {
   // ---------------------------------------------
   // Get logged-in Supabase Auth user
   // ---------------------------------------------
+  //
 
   const {
     data: { user },
