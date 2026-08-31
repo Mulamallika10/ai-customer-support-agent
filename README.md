@@ -853,7 +853,7 @@ Example:
 ``` markdown
 ## Demo Video
 
-[Watch the AI Customer Support Agent Demo](<video-url>)
+[Watch the AI Customer Support Agent Demo]( https://www.loom.com/share/5f2a208985eb4154b2cc7fd4933b079a )
 ```
 
 The demonstration should ideally show:
