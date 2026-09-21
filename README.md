@@ -214,7 +214,7 @@ callGemini
 The customer sends a message such as:
 
 ``` text
-"My headphones arrived damaged yesterday.
+"My Wireless headphones arrived damaged yesterday.
 I want a refund.".
 ```
 
@@ -222,7 +222,7 @@ The frontend sends:
 
 ``` json
 {
-  "message": "My headphones arrived damaged yesterday.I want a refund.",
+  "message": "My Wireless headphones arrived damaged yesterday.I want a refund.",
   "conversationId": "conversation-uuid"
 }
 ```
@@ -655,7 +655,7 @@ npm start
 Example:
 
 ``` text
-My headphones arrived damaged yesterday.I want a refund..
+My Wireless headphones arrived damaged yesterday.I want a refund..
 ```
 
 Verify that:
@@ -701,7 +701,7 @@ This allows the complete execution trail to be traced.
 **Customer**
 
 ``` text
-My headphones arrived damaged yesterday.I want a refund..
+My Wireless headphones arrived damaged yesterday.I want a refund..
 ```
 
 **Agent workflow**
@@ -736,7 +736,7 @@ and tool output.
 **Customer**
 
 ``` text
-My order ORD1009 arrived damaged. I would like a refund.
+My Wireless headphones arrived damaged. I would like a refund.
 ```
 
 If the order has already been refunded, the agent should not create
