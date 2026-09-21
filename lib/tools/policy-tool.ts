@@ -188,3 +188,5 @@ export function createPolicyTool() {
     }
   );
 }
+
+export const validateRefundPolicy = createPolicyTool;

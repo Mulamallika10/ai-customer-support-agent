@@ -20,21 +20,14 @@ import {
   SYSTEM_PROMPT,
 } from "./prompts";
 
-import {
-  getCustomer,
-} from "@/lib/tools/customer-tool";
+import { createCustomerTool } from "@/lib/tools/customer-tool";
 
-import {
-  getOrder,
-} from "@/lib/tools/order-tool";
+import {getOrder}
+ from "@/lib/tools/order-tool";
 
-import {
-  validateRefundPolicy,
-} from "@/lib/tools/policy-tool";
+import {validateRefundPolicy} from "@/lib/tools/policy-tool";
 
-import {
-  processRefund,
-} from "@/lib/tools/refund-tool";
+import {processRefund} from "@/lib/tools/refund-tool";
 
 
 // =====================================================
@@ -42,7 +35,7 @@ import {
 // =====================================================
 
 export const tools = [
-  getCustomer,
+  createCustomerTool,
   getOrder,
   validateRefundPolicy,
   processRefund,
@@ -182,7 +175,7 @@ export async function callGemini(
 const toolMap = {
 
   get_customer:
-    getCustomer,
+    createCustomerTool,
 
   get_order:
     getOrder,
@@ -314,13 +307,20 @@ export async function executeTools(
       // Execute tool
       // ---------------------------------------------
 
+      const customerId =
+        (state as AgentStateType & { customerId?: string }).customerId;
+
+      const resolvedTool =
+        (tool as unknown as (
+          customerId?: string
+        ) => {
+          invoke: (
+            input: typeof toolCall.args
+          ) => Promise<unknown>;
+        })(customerId);
+
       const result =
-        await (
-          tool.invoke as (
-            input:
-              typeof toolCall.args
-          ) => Promise<unknown>
-        )(
+        await resolvedTool.invoke(
           toolCall.args
         );
 

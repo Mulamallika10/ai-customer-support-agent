@@ -347,3 +347,5 @@ export function createRefundTool(
     }
   );
 }
+
+export const processRefund = createRefundTool;
